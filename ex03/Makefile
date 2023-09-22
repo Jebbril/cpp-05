@@ -6,15 +6,15 @@
 #    By: orakib <orakib@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/20 20:08:44 by orakib            #+#    #+#              #
-#    Updated: 2023/09/22 15:46:20 by orakib           ###   ########.fr        #
+#    Updated: 2023/09/22 17:13:52 by orakib           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = Forms
 
-SRC = main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp PresedentialPardonForm.cpp RobotomyRequestForm.cpp
+SRC = main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp PresedentialPardonForm.cpp RobotomyRequestForm.cpp Intern.cpp
 
-HEADER = Bureaucrat.hpp AForm.hpp ShrubberyCreationForm.hpp PresedentialPardonForm.hpp RobotomyRequestForm.hpp
+HEADER = Bureaucrat.hpp AForm.hpp ShrubberyCreationForm.hpp PresedentialPardonForm.hpp RobotomyRequestForm.hpp Intern.hpp
 
 CC = c++
 

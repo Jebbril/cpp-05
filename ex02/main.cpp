@@ -6,22 +6,25 @@
 /*   By: orakib <orakib@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 20:08:41 by orakib            #+#    #+#             */
-/*   Updated: 2023/09/21 20:50:52 by orakib           ###   ########.fr       */
+/*   Updated: 2023/09/22 16:15:02 by orakib           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "AForm.hpp"
+#include "Bureaucrat.hpp"
+#include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "PresedentialPardonForm.hpp"
 
 int	main(void) {
 	try
 	{
 		Bureaucrat	bob;
 		std::cout << bob << std::endl;
-		Bureaucrat	mike("mike", 150);
+		Bureaucrat	mike("mike", 1);
 		std::cout << mike << std::endl;
-		AForm		f1("f1", 45, 10);
-		mike.signAForm(f1);
-		f1.beSigned(bob);
+		ShrubberyCreationForm	form("home");
+		mike.signAForm(form);
+		mike.executeForm(form);
 	}
 	catch(const std::exception& e)
 	{
@@ -34,8 +37,9 @@ int	main(void) {
 		std::cout << bob << std::endl;
 		Bureaucrat	mike("mike", 1);
 		std::cout << mike << std::endl;
-		AForm		f1("f1", 45, 10);
-		mike.signAForm(f1);
+		RobotomyRequestForm	form("home");
+		mike.signAForm(form);
+		form.execute(mike);
 	}
 	catch(const std::exception& e)
 	{
@@ -48,8 +52,9 @@ int	main(void) {
 		std::cout << bob << std::endl;
 		Bureaucrat	mike("mike", 1);
 		std::cout << mike << std::endl;
-		AForm		f1("f1", 45, 10);
-		f1.beSigned(mike);
+		PresedentialPardonForm	form("home");
+		mike.signAForm(form);
+		form.execute(mike);
 	}
 	catch(const std::exception& e)
 	{

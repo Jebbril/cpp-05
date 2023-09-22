@@ -10,13 +10,14 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef AForm_H
+#ifndef AFORM_H
 
-#define AForm_H
+#define AFORM_H
 
 #include <iostream>
 #include <string>
 #include <exception>
+#include <fstream>
 #include "Bureaucrat.hpp"
 
 class	Bureaucrat;
@@ -38,10 +39,14 @@ class	AForm {
 		int	getGrade_tosign() const;
 		int	getGrade_toexec() const;
 		void	beSigned(const Bureaucrat &object);
+		virtual void	execute(const Bureaucrat &executor) const = 0;
 		class	GradeTooHighException : public std::exception {
 			virtual const char* what() const throw();
 		};
 		class	GradeTooLowException  : public std::exception {
+			virtual const char* what() const throw();
+		};
+		class	FormNotSigned  : public std::exception {
 			virtual const char* what() const throw();
 		};
 };
